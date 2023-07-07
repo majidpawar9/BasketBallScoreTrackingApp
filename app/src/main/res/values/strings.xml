@@ -1,5 +1,8 @@
 <resources>
-    <string name="app_name">ScoreKeepingApp</string>
-    <string name="team1Button">Arsenal</string>
-    <string name="team2Button">Man Utd</string>
+    <string name="app_name">BasketBall Score Keeping App</string>
+    <string name="team1Title">Raptors</string>
+    <string name="team2Title">Bucks</string>
+    <string name="team1Score">0</string>
+    <string name="team2Score">0</string>
+    <string name="reset">Reset</string>
 </resources>
