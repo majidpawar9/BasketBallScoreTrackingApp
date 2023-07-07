@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">BasketBall Score Keeping App</string>
+    <string name="app_name">BasketBall Score Tracking App</string>
     <string name="team1Title">Raptors</string>
     <string name="team2Title">Bucks</string>
     <string name="team1Score">0</string>
