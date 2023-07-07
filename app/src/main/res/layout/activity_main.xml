@@ -151,4 +151,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/reset" />
+
+    <ToggleButton
+        android:id="@+id/toggleButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:layout_marginStart="8dp"
+        android:textOn="End Match"
+        android:textOff="Start Match" />/>
+
+
 </LinearLayout>
