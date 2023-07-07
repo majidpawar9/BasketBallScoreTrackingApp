@@ -5,4 +5,10 @@
     <string name="team1Score">0</string>
     <string name="team2Score">0</string>
     <string name="reset">Reset</string>
+    <string name="teamone1PointerButton">1</string>
+    <string name="teamone2PointerButton">2</string>
+    <string name="teamone3PointerButton">3</string>
+    <string name="teamtwo1PointerButton">1</string>
+    <string name="teamtwo2PointerButton">2</string>
+    <string name="teamtwo3PointerButton">3</string>
 </resources>

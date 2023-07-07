@@ -6,6 +6,7 @@
     android:gravity="center"
     android:orientation="vertical">
 
+<!--    title-->
     <TextView
         android:id="@+id/title"
         android:layout_width="205dp"
@@ -16,6 +17,7 @@
         android:textSize="24sp"
         android:textStyle="bold" />
 
+<!--    Both team ScoreBoard -->
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -42,6 +44,7 @@
             android:textSize="60sp" />
     </LinearLayout>
 
+<!--    Title of both teams-->
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -74,6 +77,7 @@
             android:textColor="@color/black" />
     </LinearLayout>
 
+<!--    Score Counter for both teams-->
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -85,7 +89,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
             android:layout_marginStart="8dp"
-            android:text="1" />
+            android:text="@string/teamone1PointerButton" />
 
         <Button
             android:id="@+id/teamtwo1pointer"
@@ -93,7 +97,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
             android:layout_marginStart="8dp"
-            android:text="1" />
+            android:text="@string/teamtwo1PointerButton" />
     </LinearLayout>
 
     <LinearLayout
@@ -107,7 +111,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
             android:layout_marginStart="8dp"
-            android:text="2" />
+            android:text="@string/teamone2PointerButton" />
 
         <Button
             android:id="@+id/teamtwo2pointer"
@@ -115,7 +119,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
             android:layout_marginStart="8dp"
-            android:text="2" />
+            android:text="@string/teamtwo2PointerButton" />
     </LinearLayout>
 
     <LinearLayout
@@ -129,7 +133,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
             android:layout_marginStart="8dp"
-            android:text="3" />
+            android:text="@string/teamone3PointerButton" />
 
         <Button
             android:id="@+id/teamtwo3pointer"
@@ -137,7 +141,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
             android:layout_marginStart="8dp"
-            android:text="3" />
+            android:text="@string/teamtwo3PointerButton" />
 
 
     </LinearLayout>
