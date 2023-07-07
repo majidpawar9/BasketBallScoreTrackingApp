@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">ScoreKeepingApp</string>
+    <string name="team1Button">Arsenal</string>
+    <string name="team2Button">Man Utd</string>
 </resources>
