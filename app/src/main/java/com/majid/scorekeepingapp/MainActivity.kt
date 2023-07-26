@@ -34,6 +34,13 @@ class MainActivity : AppCompatActivity() {
         toggleButton = findViewById(R.id.toggleButton)
         team1Score = findViewById(R.id.team1Score)
         team2Score = findViewById(R.id.team2Score)
+        team1Button1Pointer.isEnabled = false
+        team1Button2Pointer.isEnabled = false
+        team1Button3Pointer.isEnabled = false
+        team2Button1Pointer.isEnabled = false
+        team2Button2Pointer.isEnabled = false
+        team2Button3Pointer.isEnabled = false
+        reset.isEnabled= false
 
         //define score count for each time
         var team1Scored = 0
@@ -44,28 +51,34 @@ class MainActivity : AppCompatActivity() {
 
             team1Scored += 1
             team1Score.text = team1Scored.toString()
+            reset.isEnabled = true
         }
         team2Button1Pointer.setOnClickListener {
             team2Scored += 1
             team2Score.text = team2Scored.toString()
+            reset.isEnabled = true
         }
         team1Button2Pointer.setOnClickListener {
 
             team1Scored += 2
             team1Score.text = team1Scored.toString()
+            reset.isEnabled = true
         }
         team2Button2Pointer.setOnClickListener {
             team2Scored += 2
             team2Score.text = team2Scored.toString()
+            reset.isEnabled = true
         }
         team1Button3Pointer.setOnClickListener {
 
             team1Scored += 3
             team1Score.text = team1Scored.toString()
+            reset.isEnabled = true
         }
         team2Button3Pointer.setOnClickListener {
             team2Scored += 3
             team2Score.text = team2Scored.toString()
+            reset.isEnabled = true
         }
 
         //will reset the game
@@ -74,6 +87,13 @@ class MainActivity : AppCompatActivity() {
             team2Scored = 0
             team1Score.text = team1Scored.toString()
             team2Score.text = team2Scored.toString()
+            team1Button1Pointer.isEnabled = false
+            team1Button2Pointer.isEnabled = false
+            team1Button3Pointer.isEnabled = false
+            team2Button1Pointer.isEnabled = false
+            team2Button2Pointer.isEnabled = false
+            team2Button3Pointer.isEnabled = false
+            reset.isEnabled= false
         }
         toggleButton.setOnClickListener {
             var checked = toggleButton.isChecked
@@ -83,6 +103,13 @@ class MainActivity : AppCompatActivity() {
                 team2Scored = 0
                 team1Score.text = team1Scored.toString()
                 team2Score.text = team2Scored.toString()
+                team1Button1Pointer.isEnabled = true
+                team1Button2Pointer.isEnabled = true
+                team1Button3Pointer.isEnabled = true
+                team2Button1Pointer.isEnabled = true
+                team2Button2Pointer.isEnabled = true
+                team2Button3Pointer.isEnabled = true
+
             } else {
                 Toast.makeText(
                     this,
