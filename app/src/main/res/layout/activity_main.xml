@@ -1,11 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:backgroundTint="@color/black"
     android:gravity="center"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@drawable/bass">
 
+    <Switch
+        android:id="@+id/mode_switch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="NightMode"
+        android:textColor="@color/red"
+        android:layout_gravity="end"
+        android:layout_marginBottom="25dp"/>
 <!--    title-->
     <TextView
         android:id="@+id/title"
@@ -14,6 +24,7 @@
         android:fontFamily="sans-serif-smallcaps"
         android:gravity="center"
         android:text="@string/app_name"
+        android:textColor="@color/red"
         android:textSize="24sp"
         android:textStyle="bold" />
 
@@ -31,7 +42,9 @@
             android:gravity="center"
             android:padding="24dp"
             android:text="@string/team1Score"
-            android:textSize="60sp" />
+            android:textColor="@color/red"
+            android:textSize="60sp"
+            />
 
         <TextView
             android:id="@+id/team2Score"
@@ -41,6 +54,7 @@
             android:gravity="center"
             android:padding="24dp"
             android:text="@string/team2Score"
+            android:textColor="@color/red"
             android:textSize="60sp" />
     </LinearLayout>
 
@@ -53,28 +67,33 @@
 
         <TextView
             android:id="@+id/team1Title"
-            android:layout_width="wrap_content"
-            android:layout_height="42dp"
-            android:background="#2196F3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_marginRight="50dp"
             android:text="@string/team1Title"
-            android:textColor="@color/black" />
+
+            android:textColor="@color/red"
+            android:textSize="34sp" />
 
         <TextView
-            android:layout_width="56dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:backgroundTint="@color/black"
             android:gravity="center"
             android:padding="24dp"
-            android:text="VS" />
+            android:text="VS"
+            android:textColor="@color/black"
+            android:textSize="24sp" />
 
         <TextView
             android:id="@+id/team2Title"
-            android:layout_width="51dp"
-            android:layout_height="44dp"
-            android:background="#4CAF50"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
             android:text="@string/team2Title"
-            android:textColor="@color/black" />
+            android:textSize="34sp"
+            android:textColor="@color/red" />
     </LinearLayout>
 
 <!--    Score Counter for both teams-->
@@ -85,18 +104,22 @@
 
         <Button
             android:id="@+id/teamone1pointer"
+            style="@style/Widget.AppCompat.Button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="75dp"
+            android:layout_marginBottom="8dp"
             android:text="@string/teamone1PointerButton" />
 
         <Button
             android:id="@+id/teamtwo1pointer"
+            style="@style/Widget.AppCompat.Button.Colored"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:layout_marginStart="8dp"
+            android:layout_marginLeft="75dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
             android:text="@string/teamtwo1PointerButton" />
     </LinearLayout>
 
@@ -107,18 +130,21 @@
 
         <Button
             android:id="@+id/teamone2pointer"
+            style="@style/Widget.AppCompat.Button.Colored"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="75dp"
+            android:layout_marginBottom="8dp"
             android:text="@string/teamone2PointerButton" />
 
         <Button
             android:id="@+id/teamtwo2pointer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:layout_marginStart="8dp"
+            android:layout_marginLeft="75dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
             android:text="@string/teamtwo2PointerButton" />
     </LinearLayout>
 
@@ -129,18 +155,22 @@
 
         <Button
             android:id="@+id/teamone3pointer"
+            style="@style/Widget.AppCompat.Button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="75dp"
+            android:layout_marginBottom="8dp"
             android:text="@string/teamone3PointerButton" />
 
         <Button
             android:id="@+id/teamtwo3pointer"
+            style="@style/Widget.AppCompat.Button.Colored"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"
-            android:layout_marginStart="8dp"
+            android:layout_marginLeft="75dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
             android:text="@string/teamtwo3PointerButton" />
 
 
@@ -148,18 +178,22 @@
 
     <Button
         android:id="@+id/resetButton"
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/reset" />
 
     <ToggleButton
         android:id="@+id/toggleButton"
+        android:background="@color/black"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
         android:layout_marginStart="8dp"
         android:textOn="End Match"
-        android:textOff="Start Match" />/>
+        android:textOff="Start Match"
+        android:textColor="@color/white"/>
+    />
 
 
 </LinearLayout>

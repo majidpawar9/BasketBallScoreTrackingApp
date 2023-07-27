@@ -1,11 +1,15 @@
 package com.majid.scorekeepingapp
 
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.CompoundButton
+import android.widget.Switch
 import android.widget.TextView
 import android.widget.Toast
 import android.widget.ToggleButton
+import androidx.appcompat.app.AppCompatDelegate
 
 class MainActivity : AppCompatActivity() {
     //used lateinit to keep to property from being initialized
@@ -19,6 +23,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var team1Score: TextView
     private lateinit var team2Score: TextView
     private lateinit var toggleButton: ToggleButton
+    private lateinit var mode_switch: Switch
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -42,6 +47,14 @@ class MainActivity : AppCompatActivity() {
         team2Button3Pointer.isEnabled = false
         reset.isEnabled= false
 
+        mode_switch = findViewById(R.id.mode_switch)
+
+        val sharedPref = getSharedPreferences("scorekeepingapp",Context.MODE_PRIVATE)
+        val nightmode = sharedPref.getInt("night_mode", MODE_PRIVATE)
+        AppCompatDelegate.setDefaultNightMode(nightmode)
+        mode_switch.isChecked = (nightmode == AppCompatDelegate.MODE_NIGHT_YES)
+
+        val editor = sharedPref.edit()
         //define score count for each time
         var team1Scored = 0
         var team2Scored = 0
@@ -120,8 +133,31 @@ class MainActivity : AppCompatActivity() {
                 team2Scored = 0
                 team1Score.text = team1Scored.toString()
                 team2Score.text = team2Scored.toString()
+                reset.isEnabled = false
+                team1Button1Pointer.isEnabled = false
+                team1Button2Pointer.isEnabled = false
+                team1Button3Pointer.isEnabled = false
+                team2Button1Pointer.isEnabled = false
+                team2Button2Pointer.isEnabled = false
+                team2Button3Pointer.isEnabled = false
             }
         }
+        mode_switch.setOnCheckedChangeListener{_, isChecked ->
+
+            val newNightMode = if(isChecked){
+                AppCompatDelegate.MODE_NIGHT_YES
+            }
+            else{
+                AppCompatDelegate.MODE_NIGHT_NO
+            }
+            AppCompatDelegate.setDefaultNightMode(newNightMode)
+            with(sharedPref.edit()){
+                putInt("night_mode",newNightMode)
+                apply()
+            }
+        }
+
     }
+
 
 }
