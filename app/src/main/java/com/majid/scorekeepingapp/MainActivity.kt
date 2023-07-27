@@ -1,15 +1,18 @@
 package com.majid.scorekeepingapp
 
 import android.content.Context
+import android.graphics.drawable.Drawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.CompoundButton
+import android.widget.LinearLayout
 import android.widget.Switch
 import android.widget.TextView
 import android.widget.Toast
 import android.widget.ToggleButton
 import androidx.appcompat.app.AppCompatDelegate
+import androidx.core.content.ContextCompat
 
 class MainActivity : AppCompatActivity() {
     //used lateinit to keep to property from being initialized
@@ -24,9 +27,12 @@ class MainActivity : AppCompatActivity() {
     private lateinit var team2Score: TextView
     private lateinit var toggleButton: ToggleButton
     private lateinit var mode_switch: Switch
+    private lateinit var linear :LinearLayout
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        linear= findViewById(R.id.linearLayout)
 
         //finding views by ID and storing them in Button object
         team1Button1Pointer = findViewById(R.id.teamone1pointer)
@@ -153,9 +159,15 @@ class MainActivity : AppCompatActivity() {
             AppCompatDelegate.setDefaultNightMode(newNightMode)
             with(sharedPref.edit()){
                 putInt("night_mode",newNightMode)
+
                 apply()
             }
         }
+        if(mode_switch.isChecked)
+            {
+                linear.setBackgroundResource(R.drawable.bassinvert1)
+
+            }
 
     }
 
