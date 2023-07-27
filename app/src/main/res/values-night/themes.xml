@@ -1,9 +1,11 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
     <style name="Base.Theme.ScoreKeepingApp" parent="Theme.AppCompat.Light.NoActionBar">
-        <!-- Customize your dark theme here. -->
+        <!--  Changed Normal Button color by changing the colorButtonNormal
+             which is an internal function of APPCOMPACT.LIGHT Class--> -->
         <item name="android:color">@color/black</item>
-
+<!--        This it the color which button will have when Night mode is ON-->
+        <item name="colorButtonNormal">#FF6000</item>
     </style>
 
 </resources>

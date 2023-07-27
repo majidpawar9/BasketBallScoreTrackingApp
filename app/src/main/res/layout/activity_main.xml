@@ -10,7 +10,9 @@
     android:orientation="vertical"
     android:visibility="visible"
     tools:visibility="visible">
-
+<!-- Using style (style="@style/Widget.AppCompat.Button")
+     to change the color of button -->
+<!--    NightMode Switch-->
     <Switch
         android:id="@+id/mode_switch"
         android:layout_width="wrap_content"
@@ -18,7 +20,9 @@
         android:layout_gravity="end"
         android:layout_marginBottom="25dp"
         android:text="NightMode"
-        android:textColor="@color/red" />
+        android:textColor="@color/red"
+        android:textSize="16sp" />
+
     <!--    title-->
     <TextView
         android:id="@+id/title"
@@ -45,7 +49,7 @@
             android:gravity="center"
             android:padding="24dp"
             android:text="@string/team1Score"
-            android:textColor="@color/red"
+            android:textColor="@color/orange"
             android:textSize="60sp" />
 
         <TextView
@@ -56,7 +60,7 @@
             android:gravity="center"
             android:padding="24dp"
             android:text="@string/team2Score"
-            android:textColor="@color/red"
+            android:textColor="@color/orange"
             android:textSize="60sp" />
     </LinearLayout>
 
@@ -116,7 +120,7 @@
 
         <Button
             android:id="@+id/teamtwo1pointer"
-            style="@style/Widget.AppCompat.Button.Colored"
+            style="@style/Widget.AppCompat.Button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginLeft="75dp"
@@ -132,7 +136,7 @@
 
         <Button
             android:id="@+id/teamone2pointer"
-            style="@style/Widget.AppCompat.Button.Colored"
+            style="@style/Widget.AppCompat.Button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -167,7 +171,7 @@
 
         <Button
             android:id="@+id/teamtwo3pointer"
-            style="@style/Widget.AppCompat.Button.Colored"
+            style="@style/Widget.AppCompat.Button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="75dp"
@@ -180,7 +184,6 @@
 
     <Button
         android:id="@+id/resetButton"
-
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/reset" />
@@ -191,10 +194,11 @@
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
         android:layout_marginStart="8dp"
-        android:background="@color/black"
-        android:textColor="@color/white"
+        android:background="@color/red"
+        android:textColor="@color/black"
         android:textOff="Start Match"
-        android:textOn="End Match" />
+        android:textOn="End Match"
+        />
     />
 
 

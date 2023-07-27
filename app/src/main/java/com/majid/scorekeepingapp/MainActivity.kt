@@ -14,6 +14,13 @@ import android.widget.ToggleButton
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.core.content.ContextCompat
 
+/********
+ *
+ * I have used sharedPreference to maintain the state of app in night mode or light mode accordingly.
+ * I have created and changed dark theme background by giving and using LinearLayout View by ID
+ * Please go down at the end of code to see the changed code for LAB 7 Styles
+ **********/
+
 class MainActivity : AppCompatActivity() {
     //used lateinit to keep to property from being initialized
     private lateinit var team1Button1Pointer: Button
@@ -31,9 +38,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        linear= findViewById(R.id.linearLayout)
-
         //finding views by ID and storing them in Button object
         team1Button1Pointer = findViewById(R.id.teamone1pointer)
         team2Button1Pointer = findViewById(R.id.teamtwo1pointer)
@@ -148,8 +152,12 @@ class MainActivity : AppCompatActivity() {
                 team2Button3Pointer.isEnabled = false
             }
         }
+
+        //LinearLayout view
+        linear= findViewById(R.id.linearLayout)
         mode_switch.setOnCheckedChangeListener{_, isChecked ->
 
+            //Checking switch is on-off and accordingly setting night mode and light mode
             val newNightMode = if(isChecked){
                 AppCompatDelegate.MODE_NIGHT_YES
             }
@@ -157,16 +165,17 @@ class MainActivity : AppCompatActivity() {
                 AppCompatDelegate.MODE_NIGHT_NO
             }
             AppCompatDelegate.setDefaultNightMode(newNightMode)
+
+            //using sharedPreference to store the state
             with(sharedPref.edit()){
                 putInt("night_mode",newNightMode)
-
                 apply()
             }
         }
+        //Using Main LinearLayout View to set background to invert mode when nightmode is on
         if(mode_switch.isChecked)
             {
                 linear.setBackgroundResource(R.drawable.bassinvert1)
-
             }
 
     }
