@@ -1,9 +1,12 @@
 package com.majid.scorekeepingapp
 
 import android.content.Context
+import android.content.Intent
 import android.graphics.drawable.Drawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.Button
 import android.widget.CompoundButton
 import android.widget.LinearLayout
@@ -12,6 +15,7 @@ import android.widget.TextView
 import android.widget.Toast
 import android.widget.ToggleButton
 import androidx.appcompat.app.AppCompatDelegate
+import androidx.appcompat.widget.Toolbar
 import androidx.core.content.ContextCompat
 
 /********
@@ -30,6 +34,8 @@ class MainActivity : AppCompatActivity() {
     private lateinit var team1Button3Pointer: Button
     private lateinit var team2Button3Pointer: Button
     private lateinit var reset: Button
+
+    private lateinit var toolbar: Toolbar
     private lateinit var team1Score: TextView
     private lateinit var team2Score: TextView
     private lateinit var toggleButton: ToggleButton
@@ -46,6 +52,8 @@ class MainActivity : AppCompatActivity() {
         team1Button3Pointer = findViewById(R.id.teamone3pointer)
         team2Button3Pointer = findViewById(R.id.teamtwo3pointer)
         reset = findViewById(R.id.resetButton)
+
+        toolbar = findViewById(R.id.myToolBar)
         toggleButton = findViewById(R.id.toggleButton)
         team1Score = findViewById(R.id.team1Score)
         team2Score = findViewById(R.id.team2Score)
@@ -178,7 +186,24 @@ class MainActivity : AppCompatActivity() {
                 linear.setBackgroundResource(R.drawable.bassinvert1)
             }
 
+        setSupportActionBar(toolbar)
+        getSupportActionBar()?.setTitle("Basketball Score Tracking")
     }
 
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        getMenuInflater().inflate(R.menu.menu_main,menu)
+        return true
+    }
 
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.getItemId()){
+            R.id.setting -> {
+                startActivity(Intent(this,SettingActivity::class.java))
+            }
+            R.id.about -> {
+                startActivity(Intent(this,AboutActivity::class.java))
+            }
+        }
+        return super.onOptionsItemSelected(item)
+    }
 }
