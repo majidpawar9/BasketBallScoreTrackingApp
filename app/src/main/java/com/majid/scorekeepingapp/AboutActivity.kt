@@ -5,12 +5,18 @@ import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.widget.Toolbar
 
+/**
+ * This activity displays information about the application.
+ */
+
 class AboutActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_about)
+        // Find and set the custom toolbar as the support action bar.
         val toolbar: Toolbar = findViewById(R.id.toolbarabout)
         setSupportActionBar(toolbar)
+        // Enable the back arrow in the action bar.
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
     }
     override fun onOptionsItemSelected(item: MenuItem): Boolean {

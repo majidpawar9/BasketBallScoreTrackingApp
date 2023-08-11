@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- This XML layout defines the About screen UI for an Android application. -->
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -9,15 +11,18 @@
     android:visibility="visible"
     tools:visibility="visible">
 
+    <!-- Toolbar for the About screen. -->
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbarabout"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:layout_gravity="top"
+        android:layout_marginTop="36dp"
+        android:background="@color/orange"
         android:elevation="4dp"
-        android:gravity="top"
         android:minHeight="?attr/actionBarSize" />
 
+    <!-- Text view displaying app creator information. -->
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"

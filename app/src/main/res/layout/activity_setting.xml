@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- This XML layout defines the UI elements for the SettingActivity in an Android application. -->
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+
     android:id="@+id/linearLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -9,36 +12,42 @@
     android:visibility="visible"
     tools:context=".SettingActivity"
     tools:visibility="visible">
-
+    <!-- Toolbar for the SettingActivity, providing a consistent top app bar. -->
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
+        android:layout_marginTop="36dp"
         android:layout_gravity="top"
+        android:background="@color/orange"
         android:elevation="4dp"
-        android:gravity="top"
-        android:minHeight="?attr/actionBarSize" />
+        android:gravity="center"
 
+        android:minHeight="?attr/actionBarSize" />
+    <!-- Text view providing instructions to the user about saving game scores. -->
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
         android:text="Press Switch to save the current game scores"
         android:textColor="@color/red"
         android:textSize="16sp"
-        android:textStyle="bold"
-        android:layout_gravity="center"
-        />
-
+        android:textStyle="bold" />
+    <!-- Switch widget allowing the user to toggle saving of game scores. -->
     <Switch
-        android:id="@+id/switch1"
-        android:layout_width="wrap_content"
+        android:id="@+id/retainScore"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Switch"
-        android:textColor="@color/orange"
         android:layout_gravity="center"
-
-        />
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="10dp"
+        android:text="Save Current Scores"
+        android:textColor="@color/orange"
+        android:textSize="16sp" />
 
 
 </LinearLayout>
